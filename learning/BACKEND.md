@@ -1,4 +1,4 @@
-# Frontend Development Learning Path
+# Backend Development Learning Path
 
 ## Javascript (6 hours)
 
