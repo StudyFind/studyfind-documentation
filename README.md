@@ -1,4 +1,4 @@
-# studyfind-documentation
+# StudyFind Documentation
 
 ## Database
 
