@@ -3,7 +3,7 @@
 `URL`
 
 * string
-* must start with http://
+* must start with https://
 * must not have any whitespace
 
 `Email`
