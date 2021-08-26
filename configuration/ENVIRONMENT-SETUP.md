@@ -34,8 +34,6 @@ GitHub is a website and cloud-based service that helps developers store and mana
 
 ### Installation
 
-First create an account on Github
-
 Installing on macOS
 
 1. In a terminal window run the command `git --version`
