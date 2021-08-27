@@ -2,6 +2,8 @@
 
 **NOTE:** Sprints are one month long
 
+## Table of Contents
+
 * [Meetings](#meetings)
   * [Sprint Planning](#sprint-planning)
   * [Standup](#standup)

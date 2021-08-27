@@ -1,5 +1,15 @@
 # Development Workflow
 
+## Table of Contents
+
+* [Development Workflow](#development-workflow)
+  * [Issues](#issues)
+  * [Branches](#branches)
+  * [Pull Requests (PR)](#pull-requests--pr-)
+  * [Projects](#projects)
+  * [Teams](#teams)
+  * [Workflow Summary](#workflow-summary)
+
 ## Issues
 
 Create an issue when:
@@ -75,7 +85,7 @@ On opening a PR the developer should:
 
 ---
 
-### Workflow Summary
+## Workflow Summary
 
 ```
 1:1:1 ratio of issues, branches, and pull requests

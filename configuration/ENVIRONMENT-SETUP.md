@@ -1,5 +1,7 @@
 # Setting up your development environment
 
+## Table of Contents
+
 * [Installing node and npm](#installing-node-and-npm)
   * [What is node?](#what-is-node-)
   * [What is npm?](#what-is-npm-)

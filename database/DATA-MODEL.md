@@ -1,5 +1,20 @@
 # Document Paths and Structures
 
+## Table of Contents
+
+* [Researcher Document](#researcher-document)
+* [Researcher Notification Document](#researcher-notification-document)
+* [Participant Document](#participant-document)
+* [Participant Notification Document](#participant-notification-document)
+* [Study Document](#study-document)
+* [Study Participant Document](#study-participant-document)
+* [Note Document](#note-document)
+* [Message Document](#message-document)
+* [Meeting Document](#meeting-document)
+* [Reminder Document](#reminder-document)
+* [Feedback Document](#feedback-document)
+* [Mailing Document](#mailing-document)
+
 ## Researcher Document
 
 ```ts
