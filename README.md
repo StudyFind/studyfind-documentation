@@ -13,4 +13,4 @@
 ## DevOps
 
 * [Development Workflow](devops/DEVELOPMENT-WORKFLOW.md)
-* [Agile Development](devops/AGILE-DEVELOPMENT.md)
+* [Agile Methodology](devops/AGILE-METHODOLOGY.md)
