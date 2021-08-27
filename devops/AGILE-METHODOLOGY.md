@@ -2,6 +2,16 @@
 
 **NOTE:** Sprints are one month long
 
+* [Meetings](#meetings)
+  * [Sprint Planning](#sprint-planning)
+  * [Standup](#standup)
+  * [Weekly Review](#weekly-review)
+  * [Sprint Review](#sprint-review)
+* [Roles](#roles)
+  * [Scrum Master](#scrum-master)
+  * [Sprint Leader](#sprint-leader)
+  * [Tech Lead](#tech-lead)
+
 ## Meetings
 
 ### Sprint Planning
