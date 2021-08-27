@@ -11,13 +11,20 @@ Create an issue when:
 * You have an idea to optimize some code: `optimization`
 * You have an idea to improve UI/UX: `design`
 
-Issues can have different labels based on their type and the words like `this` correspond to their label names
-Issues can also be designated milestones which could correspond to particular sprints
-
 **NOTE:**
 
+* Issues can have different labels based on their type and the words like `this` correspond to their label names
+* Issues can also be designated milestones which can correspond to particular sprints
 * Issues can be added at any time but will be addressed as the need arises
 * There will be a separate branch created for the issue when it's ready to be addressed
+
+**REPORTING BUGS:**
+
+* Include screenshots of visual error
+* Include screenshots of console error
+* Describe what actions you were performing when it happened
+* Indicate when it happened (date + time + website version)
+* Indicate where it happened (url)
 
 ## Branches
 
