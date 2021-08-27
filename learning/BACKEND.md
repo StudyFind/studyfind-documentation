@@ -1,4 +1,4 @@
-## Backend Development Learning Path
+# Backend Development Learning Path
 
 ## Javascript (6 hours)
 
@@ -16,10 +16,11 @@
 * [Firebase Back to the Basics](https://www.youtube.com/watch?v=q5J5ho7YUhA) (0.5 hours)
 * [100 Firebase Tips](https://www.youtube.com/watch?v=iWEgpdVSZyg) (0.5 hours)
 
-## Git and Github (0.75 hours)
+## Git and Github (1 hour)
 
 * [Git Tutorial](https://www.youtube.com/watch?v=USjZcfj8yxE) (0.25 hours)
 * [Github Tutorial](https://www.youtube.com/watch?v=nhNq2kIvi9s) (0.5 hours)
+* [Using Git in VSCode](https://www.youtube.com/watch?v=F2DBSH2VoHQ) (0.25 hours)
 
 ## References
 
@@ -31,9 +32,9 @@
 
 Assuming a cadence of 10 hours of work a week and doubling the number of hours for each course
 
-| Material       |           Hours |    Duration |
-|:---------------|----------------:|------------:|
-| Javascript     |         6 hours |      8 days |
-| Firebase       |         7 hours |      9 days |
-| Git and Github |      0.75 hours |       1 day |
-| **Total**      | **13.75 hours** | **18 days** |
+| Material       |        Hours |    Duration |
+|:---------------|-------------:|------------:|
+| Javascript     |      6 hours |      8 days |
+| Firebase       |      7 hours |      9 days |
+| Git and Github |       1 hour |       1 day |
+| **Total**      | **14 hours** | **18 days** |

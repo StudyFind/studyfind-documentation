@@ -1,4 +1,4 @@
-## Frontend Development Learning Path
+# Frontend Development Learning Path
 
 ## HTML and CSS (10 hours)
 
@@ -39,11 +39,11 @@
 * [Intro to React](https://scrimba.com/course/glearnreact) (5 hours)
 * [React Hooks Introduction](https://reactjs.org/docs/hooks-intro.html) (watch first hour) (1 hour)
 
-#### Projects: (5.75 hours)
+#### Projects: (5.5 hours)
 
 * [Cryptocurrency Tracker](https://www.youtube.com/watch?v=9ohK7CapmIs) (0.75 hours)
 * [Expense Tracker](https://www.youtube.com/watch?v=XuFDcZABiDQ) (1 hour)
-* Todo List App (INDEPENDENT) (4 hours)
+* Todo List App (INDEPENDENT) (3.75 hours)
 
 ## Firebase (7.25 hours)
 
@@ -58,10 +58,11 @@
 * [Chat App](https://www.youtube.com/watch?v=zQyrwxMPm88) (0.25 hours)
 * [Slack Clone](https://www.youtube.com/watch?v=QiTq5WrWoJw) (3.5 hours)
 
-## Git and Github (0.75 hours)
+## Git and Github (1 hour)
 
 * [Git Tutorial](https://www.youtube.com/watch?v=USjZcfj8yxE) (0.25 hours)
 * [Github Tutorial](https://www.youtube.com/watch?v=nhNq2kIvi9s) (0.5 hours)
+* [Using Git in VSCode](https://www.youtube.com/watch?v=F2DBSH2VoHQ) (0.25 hours)
 
 ## Independent Project Requirements
 
@@ -112,9 +113,9 @@ Assuming a cadence of 10 hours of work a week and doubling the number of hours f
 | Javascript Courses      |   5.75 hours |      8 days |
 | Javascript Projects     |      4 hours |      6 days |
 | React Courses           |      6 hours |      8 days |
-| React Projects          |   5.75 hours |      8 days |
+| React Projects          |    5.5 hours |      8 days |
 | Firebase Courses        |      4 hours |      6 days |
 | Firebase Projects       |   3.75 hours |      5 days |
-| Git and Github          |   0.75 hours |       1 day |
+| Git and Github          |      1 hours |       1 day |
 | ----------------------- | ------------ |  ---------- |
 | **Total**               | **40 hours** | **56 days** |
