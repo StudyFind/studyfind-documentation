@@ -38,7 +38,7 @@ Create an issue when:
 
 ## Branches
 
-All repositories have the following branches:
+All repositories will have the following branches:
 
 * `main`: this is the production branch that is currently deployed and live
 * `dev`: this is the development branch with new features (which will be merged with the master branch for the next release)
@@ -48,10 +48,9 @@ All repositories have the following branches:
 
 In addition to these three core branches all other branches will each address an issue at hand
 
-There will be a pull request created for each branch once it's ready to be reviewed
-
 NOTE:
 
+* There will be a pull request created for each branch once it's ready to be reviewed
 * All branches (except `fix`) MUST be deleted after their pull request has been successfully merged.
 * No branch (except `fix`) can have more than one pull request.
 
