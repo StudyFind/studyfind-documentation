@@ -5,7 +5,7 @@
 * [Development Workflow](#development-workflow)
   * [Issues](#issues)
   * [Branches](#branches)
-  * [Pull Requests (PR)](#pull-requests--pr-)
+  * [Pull Requests (PR)](#pull-requests-pr)
   * [Projects](#projects)
   * [Teams](#teams)
   * [Workflow Summary](#workflow-summary)
