@@ -1,6 +1,6 @@
 ## Frontend Development Learning Path
 
-### HTML and CSS (10 hours)
+## HTML and CSS (10 hours)
 
 #### Courses (6 hours)
 
@@ -14,7 +14,7 @@
 * [Youtube Clone](https://www.youtube.com/watch?v=rhPSo4_Tgi0) (0.5 hours)
 * Personal Website (INDEPENDENT) (1.5 hours)
 
-### Javascript (9.75 hours)
+## Javascript (9.75 hours)
 
 #### Courses (5.75 hours)
 
@@ -32,7 +32,7 @@
 * [Calculator](https://www.youtube.com/watch?v=j59qQ7YWLxw) (0.75 hours)
 * Todo List App (INDEPENDENT) (2.5 hours)
 
-### React (10.25 hours)
+## React (10.25 hours)
 
 #### Courses (6 hours)
 
@@ -45,7 +45,7 @@
 * [Expense Tracker](https://www.youtube.com/watch?v=XuFDcZABiDQ) (1 hour)
 * Todo List App (INDEPENDENT) (4 hours)
 
-### Firebase (7.25 hours)
+## Firebase (7.25 hours)
 
 #### Courses (4 hours)
 
@@ -58,12 +58,12 @@
 * [Chat App](https://www.youtube.com/watch?v=zQyrwxMPm88) (0.25 hours)
 * [Slack Clone](https://www.youtube.com/watch?v=QiTq5WrWoJw) (3.5 hours)
 
-### Git and Github (0.75 hours)
+## Git and Github (0.75 hours)
 
 * [Git Tutorial](https://www.youtube.com/watch?v=USjZcfj8yxE) (0.25 hours)
 * [Github Tutorial](https://www.youtube.com/watch?v=nhNq2kIvi9s) (0.5 hours)
 
-### Independent Project Requirements
+## Independent Project Requirements
 
 #### Personal Website
 
@@ -93,7 +93,7 @@ Use all the concepts you have learned including and not limited to:
 6. Toggle visibility of completed tasks
 7. Filter tasks by day
 
-### References
+## References
 
 * [Javascript Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
 * [Javascript Language Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
@@ -101,7 +101,7 @@ Use all the concepts you have learned including and not limited to:
 * [React Docs](https://reactjs.org/docs/getting-started.html)
 * [Firebase Guide](https://firebase.google.com/docs/guides)
 
-### Timeline
+## Timeline
 
 Assuming a cadence of 10 hours of work a week and doubling the number of hours for each course
 
