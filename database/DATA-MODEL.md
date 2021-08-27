@@ -60,8 +60,8 @@ type ResearcherNotificationCode = "CREATE_ACCOUNT" | "DELETE_ACCOUNT" | "CREATE_
 | `code`        | `ResearcherNotificationCode` | *set at creation* | true      | determines notification type, icon, and color                                        |
 | `time`        | `Timestamp`                  | *set at creation* | true      | time at which notification was sent                                                  |
 | `link`        | `URL`                        | *set at creation* | true      | redirect link to relevant content on notification click                              |
-| `title`       | `string`                     | *set at creation* | true      |                                                                                      |
-| `description` | `string`                     | *set at creation* | true      |                                                                                      |
+| `title`       | `string`                     | *set at creation* | true      | -                                                                                    |
+| `description` | `string`                     | *set at creation* | true      | -                                                                                    |
 | `read`        | `boolean`                    | `false`           | false     | has notification  been read by the user (can only be changed from `false` to `true`) |
 
 ---
@@ -146,8 +146,8 @@ type ParticipantNotificationCode = "CREATE_ACCOUNT" | "DELETE_ACCOUNT" | "RESEAR
 | `code`        | `ResearcherNotificationCode` | *set at creation* | true      | determines notification type, icon, and color                                       |
 | `time`        | `Timestamp`                  | *set at creation* | true      | time at which notification was sent                                                 |
 | `link`        | `URL`                        | *set at creation* | true      | redirect link to relevant content on notification click                             |
-| `title`       | `string`                     | *set at creation* | true      |                                                                                     |
-| `description` | `string`                     | *set at creation* | true      |                                                                                     |
+| `title`       | `string`                     | *set at creation* | true      | -                                                                                   |
+| `description` | `string`                     | *set at creation* | true      | -                                                                                   |
 | `read`        | `boolean`                    | `false`           | false     | has notification been read by the user (can only be changed from `false` to `true`) |
 
 ---
@@ -216,23 +216,23 @@ type Resource = {
 
 | Name                       | Type          | Default           | Immutable | Notes                                                   |
 |----------------------------|---------------|-------------------|-----------|---------------------------------------------------------|
-| `activated`                | `boolean`     | `true`            | false     |                                                         |
+| `activated`                | `boolean`     | `true`            | false     | -                                                       |
 | `title`                    | `string`      | *set at creation* | false     | must be between 50 and 100 characters                   |
 | `description`              | `string`      | *set at creation* | false     | must be between 300 and 500 characters                  |
-| `sex`                      | `EligibleSex` | *set at creation* | false     |                                                         |
+| `sex`                      | `EligibleSex` | *set at creation* | false     | -                                                       |
 | `minAge`                   | `number`      | *set at creation* | false     | must be between 0 and `maxAge`                          |
 | `maxAge`                   | `number`      | *set at creation* | false     | must be between `minAge` and 100                        |
-| `acceptsHealthyVolunteers` | `boolean`     | *set at creation* | false     |                                                         |
-| `type`                     | `StudyType`   | *set at creation* | false     |                                                         |
-| `createdAt`                | `Timestamp`   | *set at creation* | false     |                                                         |
-| `updatedAt`                | `Timestamp`   | *set at update*   | false     |                                                         |
+| `acceptsHealthyVolunteers` | `boolean`     | *set at creation* | false     | -                                                       |
+| `type`                     | `StudyType`   | *set at creation* | false     | -                                                       |
+| `createdAt`                | `Timestamp`   | *set at creation* | false     | -                                                       |
+| `updatedAt`                | `Timestamp`   | *set at update*   | false     | -                                                       |
 | `researcher.id`            | `UID`         | *set at creation* | true      | uid of researcher who created study (user.uid)          |
 | `researcher.name`          | `string`      | *set at creation* | true      | name of researcher who created study (user.displayName) |
 | `researcher.email`         | `Email`       | *set at creation* | true      | email of researcher who created study (user.email)      |
-| `conditions`               | `string[]`    | *set at creation* | false     |                                                         |
-| `locations`                | `Location[]`  | *set at creation* | false     |                                                         |
-| `questions`                | `Question[]`  | *set at creation* | false     |                                                         |
-| `resources`                | `Resource[]`  | *set at creation* | false     |                                                         |
+| `conditions`               | `string[]`    | *set at creation* | false     | -                                                       |
+| `locations`                | `Location[]`  | *set at creation* | false     | -                                                       |
+| `questions`                | `Question[]`  | *set at creation* | false     | -                                                       |
+| `resources`                | `Resource[]`  | *set at creation* | false     | -                                                       |
 
 ---
 
@@ -261,7 +261,7 @@ type Reponse = "Yes" | "No" | "Unsure"
 
 | Name           | Type        | Default           | Immutable | Notes                                                                          |
 |----------------|-------------|-------------------|-----------|--------------------------------------------------------------------------------|
-| `status`       | `Status`    | `true`            | false     |                                                                                |
+| `status`       | `Status`    | `true`            | false     | -                                                                              |
 | `responses`    | `Reponse[]` | *set at creation* | true      | must be the same length as the list of questions in study `studyID`            |
 | `timezone`     | `Timezone`  | *set at creation* | true      | copied from participant document (valid US timezone from moment-timezone list) |
 | `availability` | `string`    | *set at creation* | true      | copied from participant document (must be between 0 and 500 characters)        |
