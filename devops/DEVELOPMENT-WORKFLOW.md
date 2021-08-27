@@ -58,7 +58,7 @@ NOTE:
 
 When opening a PR for a branch the developer believes:
 
-* they have addressed the requirements of the feature at hand to the best of their abilities
+* they have addressed the requirements of the issue at hand to the best of their abilities
 * the branch is ready to be reviewed by their peers for feedback on functionality and code quality
 
 On opening a PR the developer should:
