@@ -1,22 +1,22 @@
-# Frontend Development Learning Path
+## Frontend Development Learning Path
 
-## HTML and CSS (10 hours)
+### HTML and CSS (10 hours)
 
-### Courses (6 hours)
+#### Courses (6 hours)
 
 * [HTML and CSS](https://scrimba.com/course/ghtmlcss) (4 hours)
 * [CSS Flexbox](https://scrimba.com/course/gflexbox) (1 hour)
 * [CSS Grid](https://scrimba.com/learn/R8PTE) (1 hour)
 
-### Projects (4 hours)
+#### Projects (4 hours)
 
 * [Responsive Website](https://www.youtube.com/watch?v=p0bGHP-PXD4) (2 hours)
 * [Youtube Clone](https://www.youtube.com/watch?v=rhPSo4_Tgi0) (0.5 hours)
 * Personal Website (INDEPENDENT) (1.5 hours)
 
-## Javascript
+### Javascript (9.75 hours)
 
-### Courses (5.75 hours)
+#### Courses (5.75 hours)
 
 * [Intro to Javascript](https://scrimba.com/course/gintrotojavascript) (1 hour)
 * [Javascript ES6](https://scrimba.com/course/gintrotoes6) (1 hour)
@@ -26,46 +26,46 @@
 * [Event Listeners](https://www.youtube.com/watch?v=jrI0WFCCLWY) (0.25 hours)
 * [Async Javascript](https://www.youtube.com/watch?v=PoRJizFvM7s) (0.5 hours)
 
-### Projects (4 hours)
+#### Projects (4 hours)
 
 * [Tic-Tac-Toe](https://www.youtube.com/watch?v=Y-GkMjUZsmM) (0.75 hours)
 * [Calculator](https://www.youtube.com/watch?v=j59qQ7YWLxw) (0.75 hours)
 * Todo List App (INDEPENDENT) (2.5 hours)
 
-## React (10.25 hours)
+### React (10.25 hours)
 
-### Courses (6 hours)
+#### Courses (6 hours)
 
 * [Intro to React](https://scrimba.com/course/glearnreact) (5 hours)
 * [React Hooks Introduction](https://reactjs.org/docs/hooks-intro.html) (watch first hour) (1 hour)
 
-### Projects: (5.75 hours)
+#### Projects: (5.75 hours)
 
 * [Cryptocurrency Tracker](https://www.youtube.com/watch?v=9ohK7CapmIs) (0.75 hours)
 * [Expense Tracker](https://www.youtube.com/watch?v=XuFDcZABiDQ) (1 hour)
 * Todo List App (INDEPENDENT) (4 hours)
 
-## Firebase (7.25 hours)
+### Firebase (7.25 hours)
 
-### Courses (4 hours)
+#### Courses (4 hours)
 
 * [Cloud Firestore](https://www.youtube.com/watch?v=v_hR4K4auoQ&list=PLl-K7zZEsYLluG5MCVEzXAQ7ACZBCuZgZ) (3 hours)
 * [Firebase Back to the Basics](https://www.youtube.com/watch?v=q5J5ho7YUhA) (0.5 hours)
 * [100 Firebase Tips](https://www.youtube.com/watch?v=iWEgpdVSZyg) (0.5 hours)
 
-### Projects (3.75 hours)
+#### Projects (3.75 hours)
 
 * [Chat App](https://www.youtube.com/watch?v=zQyrwxMPm88) (0.25 hours)
 * [Slack Clone](https://www.youtube.com/watch?v=QiTq5WrWoJw) (3.5 hours)
 
-## Git and Github (0.75 hours)
+### Git and Github (0.75 hours)
 
 * [Git Tutorial](https://www.youtube.com/watch?v=USjZcfj8yxE) (0.25 hours)
 * [Github Tutorial](https://www.youtube.com/watch?v=nhNq2kIvi9s) (0.5 hours)
 
-## Independent Project Requirements
+### Independent Project Requirements
 
-### Personal Website
+#### Personal Website
 
 The project is to build a personal website with three pages using all the concepts you have learned.
 
@@ -83,7 +83,7 @@ Use all the concepts you have learned including and not limited to:
 * Flex elements
 * Grid elements
 
-### Todo List App
+#### Todo List App
 
 1. Add tasks to list
 2. Add deadline for each task
@@ -93,7 +93,7 @@ Use all the concepts you have learned including and not limited to:
 6. Toggle visibility of completed tasks
 7. Filter tasks by day
 
-## References
+### References
 
 * [Javascript Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
 * [Javascript Language Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
@@ -101,7 +101,7 @@ Use all the concepts you have learned including and not limited to:
 * [React Docs](https://reactjs.org/docs/getting-started.html)
 * [Firebase Guide](https://firebase.google.com/docs/guides)
 
-## Timeline
+### Timeline
 
 Assuming a cadence of 10 hours of work a week and doubling the number of hours for each course
 
