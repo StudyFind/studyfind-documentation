@@ -1,5 +1,29 @@
 # Setting up your development environment
 
+* [Installing node and npm](#installing-node-and-npm)
+  * [What is node?](#what-is-node-)
+  * [What is npm?](#what-is-npm-)
+  * [Installation](#installation)
+  * [Confirming node and npm have been installed successfully](#confirming-node-and-npm-have-been-installed-successfully)
+* [Installing and configuring git and Github](#installing-and-configuring-git-and-github)
+  * [What is git?](#what-is-git-)
+  * [What is Github?](#what-is-github-)
+  * [Installation](#installation-1)
+  * [Confirming git has been successfully installed](#confirming-git-has-been-successfully-installed)
+* [Installing Firebase](#installing-firebase)
+  * [What is Firebase?](#what-is-firebase-)
+  * [Installation](#installation-2)
+  * [Confirming Firebase has been successfully installed](#confirming-firebase-has-been-successfully-installed)
+* [Installing VSCode](#installing-vscode)
+  * [What is VSCode?](#what-is-vscode-)
+  * [Installation](#installation-3)
+* [Installing ESLint and Prettier](#installing-eslint-and-prettier)
+  * [What is ESLint?](#what-is-eslint-)
+  * [What is Prettier?](#what-is-prettier-)
+  * [Installation](#installation-4)
+  * [Confirming ESLint and Prettier have been successfully installed](#confirming-eslint-and-prettier-have-been-successfully-installed)
+* [Working on a StudyFind project](#working-on-a-studyfind-project)
+
 ## Installing node and npm
 
 ### What is node?
