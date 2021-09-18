@@ -23,6 +23,7 @@
 {
     organization: string,
     background: string,
+    phone: Phone,
     timezone: {
         region: Timezone,
         autodetect: boolean,
@@ -40,6 +41,7 @@
 |-----------------------|------------|-------------------|-----------|--------------------------------------------------|
 | `organization`        | `string`   | ""                | false     | must be between 0 and 100 characters             |
 | `background`          | `string`   | ""                | false     | must be between 0 and 500 characters             |
+| `phone`          | `Phone`   | ""                | false     | must be a 10 digit string with numeric characters             |
 | `timezone.region`     | `Timezone` | *set at creation* | false     | must be a valid US timezone from moment-timezone |
 | `timezone.autodetect` | `boolean`  | `true`            | false     | -                                                |
 | `notifications.local` | `boolean`  | `true`            | false     | -                                                |
@@ -96,6 +98,7 @@ type BiologicalSex = "Male" | "Female"
     sex: BiologicalSex,
     birthdate: Date,
     availability: string,
+    phone: Phone,
     timezone: {
         region: Timezone,
         autodetect: boolean,
@@ -122,6 +125,7 @@ type BiologicalSex = "Male" | "Female"
 | `sex`                           | `BiologicalSex` | `""`              | false     | -                                                |
 | `birthdate`                     | `Date`          | `""`              | false     | -                                                |
 | `availability`                  | `string`        | `""`              | false     | must be between 0 and 500 characters             |
+| `phone`          | `Phone`   | ""                | false     | must be a 10 digit string with numeric characters             |
 | `timezone.region`               | `Timezone`      | *set at creation* | false     | must be a valid US timezone from moment-timezone |
 | `timezone.autodetect`           | `boolean`       | `true`            | false     | -                                                |
 | `location.address`              | `Address`       | *set at creation* | false     | must be a valid address from Google Places API   |

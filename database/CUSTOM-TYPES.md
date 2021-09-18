@@ -13,6 +13,13 @@
 * must not have any whitespace
 * must be entirely lower case
 
+`Phone`
+
+* string
+* must be exactly 10 characters long
+* must only include numeric characters
+* is assumed to be a US number with a +1 country code
+
 `Date`
 
 * string
