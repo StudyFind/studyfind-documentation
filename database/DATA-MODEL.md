@@ -274,6 +274,7 @@ type Reponse = "Yes" | "No" | "Unsure"
   responses: Reponse[]
   timezone: Timezone,
   availability: string,
+  fakename: string,
 }
 
 ```
