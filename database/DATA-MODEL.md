@@ -284,6 +284,7 @@ type Reponse = "Yes" | "No" | "Unsure"
 | `responses`    | `Reponse[]` | *set at creation* | true      | must be the same length as the list of questions in study `studyID`            |
 | `timezone`     | `Timezone`  | *set at creation* | true      | copied from participant document (valid US timezone from moment-timezone list) |
 | `availability` | `string`    | *set at creation* | true      | copied from participant document (must be between 0 and 500 characters)        |
+| `fakename`     | `string`    | *set at creation* | true      | randomly generated 10 character string of uppercase alphanumeric characters    |
 
 **Notes:**
 
