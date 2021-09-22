@@ -99,6 +99,8 @@ type BiologicalSex = "Male" | "Female"
     birthdate: Date,
     availability: string,
     phone: Phone,
+    enrolled: DID[],
+    saved: DID[],
     timezone: {
         region: Timezone,
         autodetect: boolean,
@@ -126,6 +128,8 @@ type BiologicalSex = "Male" | "Female"
 | `birthdate`                     | `Date`          | `""`              | false     | -                                                |
 | `availability`                  | `string`        | `""`              | false     | must be between 0 and 500 characters             |
 | `phone`          | `Phone`   | ""                | false     | must be a 10 digit string with numeric characters             |
+| `enrolled`          | `DID[]`   | ""                | false     | list of studyIDs the participant has enrolled for              |
+| `saved`          | `DID[]`   | ""                | false     | list of studyIDs the participant has saved             |
 | `timezone.region`               | `Timezone`      | *set at creation* | false     | must be a valid US timezone from moment-timezone |
 | `timezone.autodetect`           | `boolean`       | `true`            | false     | -                                                |
 | `location.address`              | `Address`       | *set at creation* | false     | must be a valid address from Google Places API   |
