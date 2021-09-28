@@ -278,7 +278,6 @@ type Reponse = "Yes" | "No" | "Unsure"
   responses: Reponse[]
   timezone: Timezone,
   availability: string,
-  fakename: string,
 }
 
 ```
@@ -289,13 +288,12 @@ type Reponse = "Yes" | "No" | "Unsure"
 | `responses`    | `Reponse[]` | *set at creation* | true      | must be the same length as the list of questions in study `studyID`            |
 | `timezone`     | `Timezone`  | *set at creation* | true      | copied from participant document (valid US timezone from moment-timezone list) |
 | `availability` | `string`    | *set at creation* | true      | copied from participant document (must be between 0 and 500 characters)        |
-| `fakename`     | `string`    | *set at creation* | true      | randomly generated 10 character string of uppercase alphanumeric characters    |
 
 **Notes:**
 
 * `participantID` is the enrolled participant's firebase uid
 * Document can only be created by participant
-* Document can only be updated by researcher
+* Document can only be updated by researcher (only the `status` field)
 * The fields timezone and availability are copied from the participant's document on creation
 
 * [MAINTENANCE] When participant changes personal timezone, update `timezone`
