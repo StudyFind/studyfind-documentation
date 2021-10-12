@@ -21,32 +21,37 @@
 // DOCUMENT PATH: /researchers/{researcherID}
 
 {
-    organization: string,
-    background: string,
-    phone: Phone,
-    timezone: {
-        region: Timezone,
-        autodetect: boolean,
-    },
-    notifications: {
-        local: boolean,
-        email: boolean,
-        phone: boolean,
-    },
+  organization: string,
+  background: string,
+  phone: Phone,
+  timezone: {
+      region: Timezone,
+      autodetect: boolean,
+      updatedAt: Timestamp,
+  },
+  notifications: {
+      local: boolean,
+      email: boolean,
+      phone: boolean,
+  },
+  createdAt: Timestamp,
+  updatedAt: Timestamp,
 }
 
 ```
 
-| Name                  | Type       | Default           | Immutable | Notes                                            |
-|-----------------------|------------|-------------------|-----------|--------------------------------------------------|
-| `organization`        | `string`   | ""                | false     | must be between 0 and 100 characters             |
-| `background`          | `string`   | ""                | false     | must be between 0 and 500 characters             |
-| `phone`          | `Phone`   | ""                | false     | must be a 10 digit string with numeric characters             |
-| `timezone.region`     | `Timezone` | *set at creation* | false     | must be a valid US timezone from moment-timezone |
-| `timezone.autodetect` | `boolean`  | `true`            | false     | -                                                |
-| `notifications.local` | `boolean`  | `true`            | false     | -                                                |
-| `notifications.email` | `boolean`  | `true`            | false     | -                                                |
-| `notifications.phone` | `boolean`  | `false`           | false     | -                                                |
+| Name                  | Type        | Default           | Immutable | Notes                                                         |
+|-----------------------|-------------|-------------------|-----------|---------------------------------------------------------------|
+| `background`          | `string`    | ""                | false     | must be between 0 and 500 characters                          |
+| `phone`               | `Phone`     | ""                | false     | must be a 10 digit string with exclusively numeric characters |
+| `timezone.region`     | `Timezone`  | *set at creation* | false     | must be a valid US timezone from moment-timezone              |
+| `timezone.autodetect` | `boolean`   | `true`            | false     | -                                                             |
+| `timezone.updatedAt`  | `Timestamp` | *set at creation* | false     | time at which the timezone was last updated                   |
+| `notifications.local` | `boolean`   | `true`            | false     | -                                                             |
+| `notifications.email` | `boolean`   | `false`           | false     | -                                                             |
+| `notifications.phone` | `boolean`   | `false`           | false     | -                                                             |
+| `createdAt`           | `Timestamp` | *set at creation* | true      | time at which user was created                                |
+| `updatedAt`           | `Timestamp` | *set on update*   | false     | time at which user was last updated                           |
 
 ---
 
@@ -62,24 +67,26 @@ type ResearcherNotificationCode = "CREATE_ACCOUNT" | "DELETE_ACCOUNT" | "CREATE_
 // DOCUMENT PATH: /researchers/{researcherID}/notifications/{notificationID}
 
 {
-  code: ResearcherNotificationCode,
-  time: Timestamp,
+  title: string,
+  body: string,
   link: URL,
   read: boolean,
-  title: string,
-  description: string,
+  code: ResearcherNotificationCode,
+  createdAt: Timestamp,
+  updatedAt: Timestamp,
 }
 
 ```
 
-| Name          | Type                         | Default           | Immutable | Notes                                                                                |
-|---------------|------------------------------|-------------------|-----------|--------------------------------------------------------------------------------------|
-| `code`        | `ResearcherNotificationCode` | *set at creation* | true      | determines notification type, icon, and color                                        |
-| `time`        | `Timestamp`                  | *set at creation* | true      | time at which notification was sent                                                  |
-| `link`        | `URL`                        | *set at creation* | true      | redirect link to relevant content on notification click                              |
-| `title`       | `string`                     | *set at creation* | true      | -                                                                                    |
-| `description` | `string`                     | *set at creation* | true      | -                                                                                    |
-| `read`        | `boolean`                    | `false`           | false     | has notification  been read by the user (can only be changed from `false` to `true`) |
+| Name        | Type                         | Default           | Immutable | Notes                                                                                |
+|-------------|------------------------------|-------------------|-----------|--------------------------------------------------------------------------------------|
+| `title`     | `string`                     | *set at creation* | true      | -                                                                                    |
+| `body`      | `string`                     | *set at creation* | true      | -                                                                                    |
+| `link`      | `URL`                        | *set at creation* | true      | redirect link to relevant content on notification click                              |
+| `read`      | `boolean`                    | `false`           | false     | has notification  been read by the user (can only be changed from `false` to `true`) |
+| `code`      | `ResearcherNotificationCode` | *set at creation* | true      | determines notification type, icon, and color                                        |
+| `createdAt` | `Timestamp`                  | *set at creation* | true      | time at which notification was sent                                                  |
+| `updatedAt` | `Timestamp`                  | *set on update*   | false     | time at which notification was read                                                  |
 
 ---
 
@@ -88,53 +95,68 @@ type ResearcherNotificationCode = "CREATE_ACCOUNT" | "DELETE_ACCOUNT" | "CREATE_
 ```ts
 // CUSTOM TYPES
 
-type BiologicalSex = "Male" | "Female"
+type BiologicalSex = "" | "Male" | "Female"
 ```
 
 ```ts
 // DOCUMENT PATH: /participants/{participantID}
 
 {
-    sex: BiologicalSex,
-    birthdate: Date,
-    availability: string,
-    phone: Phone,
-    timezone: {
-        region: Timezone,
-        autodetect: boolean,
-    },
-    location: {
-        address: Address,
-        coordinates: {
-            latitude: Latitude,
-            longitude: Longitude,
-        },
-        autodetect: boolean,
-    },
-    notifications: {
-        local: boolean,
-        email: boolean,
-        phone: boolean,
-    },
+  sex: BiologicalSex,
+  birthdate: Date,
+  availability: string,
+  phone: Phone,
+  enrolled: DocumentID[],
+  saved: DocumentID[],
+  timezone: {
+      region: Timezone,
+      autodetect: boolean,
+      updatedAt: Timestamp,
+  },
+  location: {
+      address: Address,
+      coordinates: {
+          latitude: Latitude,
+          longitude: Longitude,
+      },
+      autodetect: boolean,
+      updatedAt: Timestamp,
+  },
+  notifications: {
+      local: boolean,
+      email: boolean,
+      phone: boolean,
+  },
+  createdAt: Timestamp,
+  updatedAt: Timestamp,
 }
 
 ```
 
-| Name                            | Type            | Default           | Immutable | Notes                                            |
-|---------------------------------|-----------------|-------------------|-----------|--------------------------------------------------|
-| `sex`                           | `BiologicalSex` | `""`              | false     | -                                                |
-| `birthdate`                     | `Date`          | `""`              | false     | -                                                |
-| `availability`                  | `string`        | `""`              | false     | must be between 0 and 500 characters             |
-| `phone`          | `Phone`   | ""                | false     | must be a 10 digit string with numeric characters             |
-| `timezone.region`               | `Timezone`      | *set at creation* | false     | must be a valid US timezone from moment-timezone |
-| `timezone.autodetect`           | `boolean`       | `true`            | false     | -                                                |
-| `location.address`              | `Address`       | *set at creation* | false     | must be a valid address from Google Places API   |
-| `location.coordinates.latitude` | `Latitude`      | *set at creation* | false     | -                                                |
-| `location.coordinates.latitude` | `Longitude`     | *set at creation* | false     | -                                                |
-| `location.autodetect`           | `boolean`       | `true`            | false     | -                                                |
-| `notifications.local`           | `boolean`       | `true`            | false     | -                                                |
-| `notifications.email`           | `boolean`       | `true`            | false     | -                                                |
-| `notifications.phone`           | `boolean`       | `false`           | false     | -                                                |
+| Name                  | Type            | Default           | Immutable | Notes                                                                                            |
+|-----------------------|-----------------|-------------------|-----------|--------------------------------------------------------------------------------------------------|
+| `sex`                 | `BiologicalSex` | `""`              | false     | -                                                                                                |
+| `birthdate`           | `Date`          | `""`              | false     | -                                                                                                |
+| `availability`        | `string`        | `""`              | false     | must be between 0 and 500 characters                                                             |
+| `phone`               | `Phone`         | ""                | false     | must be a 10 digit string with exclusively numeric characters                                    |
+| `enrolled`            | `DocumentID[]`  | []                | true      | list of studyIDs the participant has enrolled for (updated solely by maintenance cloud fuctions) |
+| `saved`               | `DocumentID[]`  | []                | false     | list of studyIDs the participant has saved                                                       |
+| `timezone.region`     | `Timezone`      | *set at creation* | false     | must be a valid US timezone from moment-timezone                                                 |
+| `timezone.autodetect` | `boolean`       | `true`            | false     | -                                                                                                |
+| `timezone.updatedAt`  | `Timestamp`     | *set at creation* | false     | time at which the timezone was last updated                                                      |
+
+| `location.address`              | `Address`       | *set at creation* | false     | must be a valid address from Google Places API                                                   |
+| `location.coordinates.latitude` | `Latitude`      | *set at creation* | false     | -                                                                                                |
+| `location.coordinates.longitude` | `Longitude`     | *set at creation* | false     | -                                                                                                |
+| `location.autodetect`           | `boolean`       | `false`           | false     | -                                                                                                |
+| `location.updatedAt`  | `Timestamp` | *set at creation* | false     | time at which the location was last updated                   |
+
+| `notifications.local`           | `boolean`       | `true`            | false     | -                                                                                                |
+| `notifications.email`           | `boolean`       | `false`           | false     | -                                                                                                |
+| `notifications.phone`           | `boolean`       | `false`           | false     | -                                                                                                |
+| `createdAt`                     | `Timestamp`     | *set at creation* | true      | time at which user was created                                                                   |
+| `updatedAt`                     | `Timestamp`     | *set on update*   | false     | time at which user was last updated                                                              |
+
 
 ---
 
@@ -147,27 +169,29 @@ type ParticipantNotificationCode = "CREATE_ACCOUNT" | "DELETE_ACCOUNT" | "RESEAR
 ```
 
 ```ts
-// DOCUMENT PATH: /researchers/{researcherID}/notifications/{notificationID}
+// DOCUMENT PATH: /participants/{participantID}/notifications/{notificationID}
 
 {
-  code: ParticipantNotificationCode,
-  time: Timestamp,
+  title: string,
+  body: string,
   link: URL,
   read: boolean,
-  title: string,
-  description: string,
+  code: ParticipantNotificationCode,
+  createdAt: Timestamp,
+  updatedAt: Timestamp,
 }
 
 ```
 
-| Name          | Type                         | Default           | Immutable | Notes                                                                               |
-|---------------|------------------------------|-------------------|-----------|-------------------------------------------------------------------------------------|
-| `code`        | `ResearcherNotificationCode` | *set at creation* | true      | determines notification type, icon, and color                                       |
-| `time`        | `Timestamp`                  | *set at creation* | true      | time at which notification was sent                                                 |
-| `link`        | `URL`                        | *set at creation* | true      | redirect link to relevant content on notification click                             |
-| `title`       | `string`                     | *set at creation* | true      | -                                                                                   |
-| `description` | `string`                     | *set at creation* | true      | -                                                                                   |
-| `read`        | `boolean`                    | `false`           | false     | has notification been read by the user (can only be changed from `false` to `true`) |
+| Name        | Type                          | Default           | Immutable | Notes                                                                                |
+|-------------|-------------------------------|-------------------|-----------|--------------------------------------------------------------------------------------|
+| `title`     | `string`                      | *set at creation* | true      | -                                                                                    |
+| `body`      | `string`                      | *set at creation* | true      | -                                                                                    |
+| `link`      | `URL`                         | *set at creation* | true      | redirect link to relevant content on notification click                              |
+| `read`      | `boolean`                     | `false`           | false     | has notification  been read by the user (can only be changed from `false` to `true`) |
+| `code`      | `ParticipantNotificationCode` | *set at creation* | true      | determines notification type, icon, and color                                        |
+| `createdAt` | `Timestamp`                   | *set at creation* | true      | time at which notification was sent                                                  |
+| `updatedAt` | `Timestamp`                   | *set on update*   | false     | time at which notification was read                                                  |
 
 ---
 
@@ -176,11 +200,11 @@ type ParticipantNotificationCode = "CREATE_ACCOUNT" | "DELETE_ACCOUNT" | "RESEAR
 ```ts
 // CUSTOM TYPES
 
-type EligibleSex = "All" | "Male" | "Female"
+type StudySex = "All" | "Male" | "Female"
 
 type StudyType = "Observational" | "Interventional"
 
-type Location = {
+type StudyLocation = {
   address: Address,
   coordinates: {
     latitude: Latitude,
@@ -189,13 +213,15 @@ type Location = {
 }
 
 type StudyQuestionType = "Inclusion" | "Exclusion"
+type StudyQuestionWeight = "Critical" | "High" | "Medium" | "Low" | "Trivial" | "Optional";
 
-type Question = {
+type StudyQuestion = {
   type: StudyQuestionType,
+  weight: StudyQuestionWeight,
   prompt: string,
 }
 
-type Resource = {
+type StudyResource = {
   name: string, // resource name
   link: URL,
 }
@@ -208,50 +234,52 @@ type Resource = {
   activated: boolean,
   title: string,
   description: string,
-  sex: EligibleSex,
+  sex: StudySex,
 
   minAge: number,
   maxAge: number,
-  acceptsHealthyVolunteers: boolean,
+  acceptsHealthyParticipants: boolean,
+  acceptsRemoteParticipants: boolean,
   type: StudyType,
 
-  createdAt: Timestamp,
-  updatedAt: Timestamp,
-
   researcher: {
-    id: UID,
+    id: UserID,
     name: string,
     email: Email,
   },
 
   conditions: string[],
 
-  locations: Location[],
-  questions: Question[],
-  resources: Resource[],
+  locations: StudyLocation[],
+  questions: StudyQuestion[],
+  resources: StudyResource[],
+
+  createdAt: Timestamp,
+  updatedAt: Timestamp,
 }
 
 ```
 
-| Name                       | Type          | Default           | Immutable | Notes                                                   |
-|----------------------------|---------------|-------------------|-----------|---------------------------------------------------------|
-| `activated`                | `boolean`     | `true`            | false     | -                                                       |
-| `title`                    | `string`      | *set at creation* | false     | must be between 50 and 100 characters                   |
-| `description`              | `string`      | *set at creation* | false     | must be between 300 and 500 characters                  |
-| `sex`                      | `EligibleSex` | *set at creation* | false     | -                                                       |
-| `minAge`                   | `number`      | *set at creation* | false     | must be between 0 and `maxAge`                          |
-| `maxAge`                   | `number`      | *set at creation* | false     | must be between `minAge` and 100                        |
-| `acceptsHealthyVolunteers` | `boolean`     | *set at creation* | false     | -                                                       |
-| `type`                     | `StudyType`   | *set at creation* | false     | -                                                       |
-| `createdAt`                | `Timestamp`   | *set at creation* | false     | -                                                       |
-| `updatedAt`                | `Timestamp`   | *set at update*   | false     | -                                                       |
-| `researcher.id`            | `UID`         | *set at creation* | true      | uid of researcher who created study (user.uid)          |
-| `researcher.name`          | `string`      | *set at creation* | true      | name of researcher who created study (user.displayName) |
-| `researcher.email`         | `Email`       | *set at creation* | true      | email of researcher who created study (user.email)      |
-| `conditions`               | `string[]`    | *set at creation* | false     | -                                                       |
-| `locations`                | `Location[]`  | *set at creation* | false     | -                                                       |
-| `questions`                | `Question[]`  | *set at creation* | false     | -                                                       |
-| `resources`                | `Resource[]`  | *set at creation* | false     | -                                                       |
+| Name                         | Type              | Default           | Immutable | Notes                                                   |
+|------------------------------|-------------------|-------------------|-----------|---------------------------------------------------------|
+| `activated`                  | `boolean`         | `true`            | false     | whether study is shown to participants or not           |
+| `title`                      | `string`          | *set at creation* | false     | must be between 50 and 100 characters                   |
+| `description`                | `string`          | *set at creation* | false     | must be between 300 and 500 characters                  |
+| `sex`                        | `StudySex`        | *set at creation* | false     | -                                                       |
+| `minAge`                     | `number`          | *set at creation* | false     | must be between 0 and `maxAge`                          |
+| `maxAge`                     | `number`          | *set at creation* | false     | must be between `minAge` and 100                        |
+| `acceptsHealthyParticipants` | `boolean`         | *set at creation* | false     | -                                                       |
+| `acceptsRemoteParticipants`  | `boolean`         | *set at creation* | false     | -                                                       |
+| `type`                       | `StudyType`       | *set at creation* | false     | -                                                       |
+| `researcher.id`              | `UserID`          | *set at creation* | true      | uid of researcher who created study (user.uid)          |
+| `researcher.name`            | `string`          | *set at creation* | true      | name of researcher who created study (user.displayName) |
+| `researcher.email`           | `Email`           | *set at creation* | true      | email of researcher who created study (user.email)      |
+| `conditions`                 | `string[]`        | *set at creation* | false     | -                                                       |
+| `locations`                  | `StudyLocation[]` | *set at creation* | false     | -                                                       |
+| `questions`                  | `StudyQuestion[]` | *set at creation* | false     | -                                                       |
+| `resources`                  | `StudyResource[]` | *set at creation* | false     | -                                                       |
+| `createdAt`                  | `Timestamp`       | *set at creation* | true      | -                                                       |
+| `updatedAt`                  | `Timestamp`       | *set on update*   | false     | -                                                       |
 
 ---
 
@@ -260,9 +288,9 @@ type Resource = {
 ```ts
 // CUSTOM TYPES
 
-type Status = "interested" | "consented" |  "screened" | "accepted" | "rejected"
+type StudyParticipantStatus = "interested" | "consented" |  "screened" | "accepted" | "rejected"
 
-type Reponse = "Yes" | "No" | "Unsure"
+type StudyParticipantResponse = "Yes" | "No" | "Unsure"
 
 ```
 
@@ -270,20 +298,28 @@ type Reponse = "Yes" | "No" | "Unsure"
 // DOCUMENT PATH: /studies/{studyID}/participants/{participantID}
 
 {
-  status: Status,
-  responses: Reponse[]
+  questions: StudyQuestion[],
+  responses: StudyParticipantResponse[]
+  status: StudyParticipantStatus,
+  fakename: string,
   timezone: Timezone,
   availability: string,
+  createdAt: Timestamp,
+  updatedAt: Timestamp,
 }
 
 ```
 
-| Name           | Type        | Default           | Immutable | Notes                                                                          |
-|----------------|-------------|-------------------|-----------|--------------------------------------------------------------------------------|
-| `status`       | `Status`    | `true`            | false     | -                                                                              |
-| `responses`    | `Reponse[]` | *set at creation* | true      | must be the same length as the list of questions in study `studyID`            |
-| `timezone`     | `Timezone`  | *set at creation* | true      | copied from participant document (valid US timezone from moment-timezone list) |
-| `availability` | `string`    | *set at creation* | true      | copied from participant document (must be between 0 and 500 characters)        |
+| Name           | Type                         | Default           | Immutable | Notes                                                                          |
+|----------------|------------------------------|-------------------|-----------|--------------------------------------------------------------------------------|
+| `questions`    | `StudyQuestion[]`            | *set at creation* | true      | must be the same length as the list of questions in study `studyID`            |
+| `responses`    | `StudyParticipantResponse[]` | *set at creation* | true      | must be the same length as the list of questions in study `studyID`            |
+| `status`       | `StudyParticipantStatus`     | `"interested"`    | false     | -                                                                              |
+| `fakename`     | `string`                     | *set at creation* | true      | -                                                                              |
+| `timezone`     | `Timezone`                   | *set at creation* | true      | copied from participant document (valid US timezone from moment-timezone list) |
+| `availability` | `string`                     | *set at creation* | true      | copied from participant document (must be between 0 and 500 characters)        |
+| `createdAt`    | `Timestamp`                  | *set at creation* | true      | -                                                                              |
+| `updatedAt`    | `Timestamp`                  | *set on update*   | false     | -                                                                              |
 
 **Notes:**
 
@@ -304,17 +340,25 @@ type Reponse = "Yes" | "No" | "Unsure"
 // DOCUMENT PATH: /studies/{studyID}/participants/{participantID}/notes/{noteID}
 
 {
-  time: Timestamp,
   title: string,
   body: string,
+  participantID: UserID,
+  researcherID: UserID,
+  studyID: DocumentID,
+  createdAt: Timestamp,
+  updatedAt: Timestamp,
 }
 ```
 
-| Name    | Type        | Default           | Immutable | Notes                                |
-|---------|-------------|-------------------|-----------|--------------------------------------|
-| `time`  | `Timestamp` | *set at creation* | true      | time at which note was created       |
-| `title` | `string`    | *set at creation* | false     | must be between 1 and 100 characters |
-| `body`  | `string`    | *set at creation* | false     | must be between 1 and 500 characters |
+| Name            | Type         | Default           | Immutable | Notes                                                   |
+|-----------------|--------------|-------------------|-----------|---------------------------------------------------------|
+| `title`         | `string`     | *set at creation* | false     | must be between 1 and 100 characters                    |
+| `body`          | `string`     | *set at creation* | false     | must be between 1 and 500 characters                    |
+| `participantID` | `UserID`     | *set at creation* | true      | uid of participant who enrolled in the study            |
+| `researcherID`  | `UserID`     | *set at creation* | true      | uid of researcher who created the study the note is for |
+| `studyID`       | `DocumentID` | *set at creation* | true      | `studyID` of the study the note is for                  |
+| `createdAt`     | `Timestamp`  | *set at creation* | true      | -                                                       |
+| `updatedAt`     | `Timestamp`  | *set on update*   | false     | -                                                       |
 
 ---
 
@@ -324,19 +368,21 @@ type Reponse = "Yes" | "No" | "Unsure"
 // DOCUMENT PATH: /studies/{studyID}/participants/{participantID}/messages/{messageID}
 
 {
-  time: Timestamp,
-  user: UID,
+  user: UserID,
   text: string,
   read: boolean,
+  createdAt: Timestamp,
+  updatedAt: Timestamp,
 }
 ```
 
-| Name   | Type        | Default           | Immutable | Notes                                                                        |
-|--------|-------------|-------------------|-----------|------------------------------------------------------------------------------|
-| `time` | `Timestamp` | *set at creation* | true      | time at which message was sent                                               |
-| `user` | `UID`       | *set at creation* | true      | uid of user who sent the message                                             |
-| `text` | `string`    | *set at creation* | true      | contents of the message                                                      |
-| `read` | `boolean`   | `false`           | false     | can only be changed from `false` to `true` by other user in the conversation |
+| Name        | Type        | Default           | Immutable | Notes                                                                        |
+|-------------|-------------|-------------------|-----------|------------------------------------------------------------------------------|
+| `user`      | `UserID`    | *set at creation* | true      | uid of user who sent the message                                             |
+| `text`      | `string`    | *set at creation* | true      | contents of the message                                                      |
+| `read`      | `boolean`   | `false`           | false     | can only be changed from `false` to `true` by other user in the conversation |
+| `createdAt` | `Timestamp` | *set at creation* | true      | time at which message was sent                                               |
+| `updatedAt` | `Timestamp` | *set on update*   | false     | time at which message was read                                               |
 
 **Notes:**
 
@@ -350,28 +396,32 @@ type Reponse = "Yes" | "No" | "Unsure"
 ## Meeting Document
 
 ```ts
-// DOCUMENT PATH: /meetings/{meetingID}
+// DOCUMENT PATH: /studies/{studyID}/participants/{participantID}/meetings/{meetingID}
 
 {
   name: string,
   link: URL,
   time: Timestamp,
-  participantID: UID,
-  researcherID: UID,
-  studyID: DID,
   confirmedByParticipant: boolean,
+  participantID: UserID,
+  researcherID: UserID,
+  studyID: DocumentID,
+  createdAt: Timestamp,
+  updatedAt: Timestamp,
 }
 ```
 
-| Name                     | Type        | Default           | Immutable | Notes                                                                                  |
-|--------------------------|-------------|-------------------|-----------|----------------------------------------------------------------------------------------|
-| `name`                   | `string`    | *set at creation* | false     | -                                                                                      |
-| `link`                   | `URL`       | *set at creation* | false     | online meeting link (zoom/meet)                                                        |
-| `time`                   | `Timestamp` | *set at creation* | false     | time at which the meeting is scheduled for                                             |
-| `participantID`          | `UID`       | *set at creation* | true      | uid of participant who enrolled for the study                                          |
-| `researcherID`           | `UID`       | *set at creation* | true      | uid of researcher who created the study the meeting is for                             |
-| `studyID`                | `DID`       | *set at creation* | true      | `studyID` of the study the meeting is for                                              |
-| `confirmedByParticipant` | `boolean`   | `false`           | false     | has the participant confirmed the meeting (can only be changed from `false` to `true`) |
+| Name                     | Type         | Default           | Immutable | Notes                                                                                  |
+|--------------------------|--------------|-------------------|-----------|----------------------------------------------------------------------------------------|
+| `name`                   | `string`     | *set at creation* | false     | -                                                                                      |
+| `link`                   | `URL`        | *set at creation* | false     | online meeting link (zoom/meet)                                                        |
+| `time`                   | `Timestamp`  | *set at creation* | false     | time at which the meeting is scheduled for                                             |
+| `confirmedByParticipant` | `boolean`    | `false`           | false     | has the participant confirmed the meeting (can only be changed from `false` to `true`) |
+| `participantID`          | `UserID`     | *set at creation* | true      | uid of participant who enrolled in the study                                           |
+| `researcherID`           | `UserID`     | *set at creation* | true      | uid of researcher who created the study the meeting is for                             |
+| `studyID`                | `DocumentID` | *set at creation* | true      | `studyID` of the study the meeting is for                                              |
+| `createdAt`              | `Timestamp`  | *set at creation* | true      | -                                                                                      |
+| `updatedAt`              | `Timestamp`  | *set on update*   | false     | -                                                                                      |
 
 **Notes:**
 
@@ -386,30 +436,34 @@ type Reponse = "Yes" | "No" | "Unsure"
 ## Reminder Document
 
 ```ts
-// DOCUMENT PATH: /reminders/{reminderID}
+// DOCUMENT PATH: /studies/{studyID}/participants/{participantID}/reminders/{reminderID}
 
 {
   title: string,
   times: WeeklyOffset[],
   startDate: Date,
   endDate: Date,
-  participantID: UID,
-  researcherID: UID,
-  studyID: DID,
   confirmedByParticipant: boolean,
+  participantID: UserID,
+  researcherID: UserID,
+  studyID: DocumentID,
+  createdAt: Timestamp,
+  updatedAt: Timestamp,
 }
 ```
 
-| Name                     | Type        | Default           | Immutable | Notes                                                                                   |
-|--------------------------|-------------|-------------------|-----------|-----------------------------------------------------------------------------------------|
-| `title`                  | `string`    | *set at creation* | false     | -                                                                                       |
-| `times`                  | `URL`       | *set at creation* | false     | list of weekly offsets at which reminder is sent                                        |
-| `startDate`              | `Timestamp` | *set at creation* | false     | must be in future                                                                       |
-| `endDate`                | `Timestamp` | *set at creation* | false     | must be after `startDate`                                                               |
-| `participantID`          | `UID`       | *set at creation* | true      | uid of participant who enrolled for the study                                           |
-| `researcherID`           | `UID`       | *set at creation* | true      | uid of researcher who created the study the reminder is for                             |
-| `studyID`                | `DID`       | *set at creation* | true      | `studyID` of the study the reminder is for                                              |
-| `confirmedByParticipant` | `boolean`   | `false`           | false     | has the participant confirmed the reminder (can only be changed from `false` to `true`) |
+| Name                     | Type             | Default           | Immutable | Notes                                                                                   |
+|--------------------------|------------------|-------------------|-----------|-----------------------------------------------------------------------------------------|
+| `title`                  | `string`         | *set at creation* | false     | -                                                                                       |
+| `times`                  | `WeeklyOffset[]` | *set at creation* | false     | list of weekly offsets at which reminder is sent                                        |
+| `startDate`              | `Date`           | *set at creation* | false     | must be in future                                                                       |
+| `endDate`                | `Date`           | *set at creation* | false     | must be after `startDate`                                                               |
+| `confirmedByParticipant` | `boolean`        | `false`           | false     | has the participant confirmed the reminder (can only be changed from `false` to `true`) |
+| `participantID`          | `UserID`         | *set at creation* | true      | uid of participant who enrolled in the study                                            |
+| `researcherID`           | `UserID`         | *set at creation* | true      | uid of researcher who created the study the reminder is for                             |
+| `studyID`                | `DocumentID`     | *set at creation* | true      | `studyID` of the study the reminder is for                                              |
+| `createdAt`              | `Timestamp`      | *set at creation* | true      | -                                                                                       |
+| `updatedAt`              | `Timestamp`      | *set on update*   | false     | -                                                                                       |
 
 **Notes:**
 
@@ -424,29 +478,47 @@ type Reponse = "Yes" | "No" | "Unsure"
 
 ## Feedback Document
 
+* Only create mutation allowed as this data is used internally
+
+```ts
+// CUSTOM TYPES
+
+type FeedbackSystem = "Android" | "iOS" | "macOS" | "Windows" | "Linux" | "Other";
+
+type FeedbackBroswer = "Firefox" | "Opera" | "Internet Edge" | "Chrome" | "Safari" | "Other";
+
+```
+
 ```ts
 // DOCUMENT PATH: /feedback/{feedbackID}
 
 {
-  time: Timestamp,
-  side: UserType,
-  email: Email,
   title: string,
   body: string,
+  side: UserType,
+  email: Email,
+  system: FeedbackSystem;
+  browser: FeedbackBroswer;
+  createdAt: Timestamp,
+  updatedAt: Timestamp,
 }
 ```
 
-| Name    | Type        | Default           | Immutable | Notes                                                                  |
-|---------|-------------|-------------------|-----------|------------------------------------------------------------------------|
-| `time`  | `Timestamp` | *set at creation* | true      | time at which feedback was submitted                                   |
-| `side`  | `UserType`  | *set at creation* | true      | which website side (researcher/participant) was the feedback sent from |
-| `email` | `Email`     | *set at creation* | true      | must be the same as the authenticated user's email                     |
-| `title` | `string`    | *set at creation* | true      | between 1 and 100 characters                                           |
-| `body`  | `string`    | *set at creation* | true      | between 1 and 500 characters                                           |
+| Name        | Type              | Default           | Immutable | Notes                                                                  |
+|-------------|-------------------|-------------------|-----------|------------------------------------------------------------------------|
+| `title`     | `string`          | *set at creation* | true      | between 1 and 100 characters                                           |
+| `body`      | `string`          | *set at creation* | true      | between 1 and 500 characters                                           |
+| `side`      | `UserType`        | *set at creation* | true      | which website side (researcher/participant) was the feedback sent from |
+| `email`     | `Email`           | *set at creation* | true      | must be the same as the authenticated user's email                     |
+| `system`    | `FeedbackSystem`  | *set at creation* | true      | system used by the user                                                |
+| `browser`   | `FeedbackBroswer` | *set at creation* | true      | browser used by the user                                               |
+| `createdAt` | `Timestamp`       | *set at creation* | true      | time at which feedback was submitted                                   |
+| `updatedAt` | `Timestamp`       | *set on creation* | true      | redundant for now as feedback is never updated                         |
+
 
 **Notes:**
 
-* Only create option allowed as this data is used internally
+* Only create mutation allowed as this data is used internally
 
 ---
 
@@ -456,17 +528,20 @@ type Reponse = "Yes" | "No" | "Unsure"
 // DOCUMENT PATH: /mailing/{mailingID}
 
 {
-  time: Timestamp,
   side: UserType,
   email: Email,
+  createdAt: Timestamp,
+  updatedAt: Timestamp,
 }
 ```
 
-| Name    | Type        | Default           | Immutable | Notes                                                                  |
-|---------|-------------|-------------------|-----------|------------------------------------------------------------------------|
-| `time`  | `string`    | *set at creation* | false     | time at which email was submitted                                      |
-| `side`  | `URL`       | *set at creation* | false     | which website side (researcher/participant) was the feedback sent from |
-| `email` | `Timestamp` | *set at creation* | false     | -                                                                      |
+| Name        | Type        | Default           | Immutable | Notes                                                                               |
+|-------------|-------------|-------------------|-----------|-------------------------------------------------------------------------------------|
+| `side`      | `UserType`  | *set at creation* | false     | which website side (researcher/participant) did the user join the mailing list from |
+| `email`     | `Email`     | *set at creation* | false     | -                                                                                   |
+| `createdAt` | `Timestamp` | *set at creation* | true      | time at which email was submitted                                                   |
+| `updatedAt` | `Timestamp` | *set on creation* | true      | redundant for now as feedback is never updated                                      |
+
 
 **Notes:**
 

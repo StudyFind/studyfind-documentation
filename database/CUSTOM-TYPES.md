@@ -30,12 +30,12 @@
 * number (integer)
 * Unix Timestamp in milliseconds
 
-`UID` (Firebase User ID)
+`UserID` (Firebase User ID)
 
 * string
 * 28 case-sensitive alphanumeric characters
 
-`DID` (Firebase Document ID)
+`DocumentID` (Firebase Document ID)
 
 * string
 * 20 case-sensitive alphanumeric characters
@@ -71,7 +71,7 @@
 `UserType`
 
 * string
-* Possible Values: `["researcher", "participant"]`
+* Possible Values: `["RESEARCHER", "PARTICIPANT"]`
 
 <!-- 9.  SurveyQuestionType
     * string
