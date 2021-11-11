@@ -378,9 +378,11 @@ type StudyParticipantResponse = "Yes" | "No" | "Unsure"
 
 | Name        | Type        | Default           | Immutable | Notes                                                                        |
 |-------------|-------------|-------------------|-----------|------------------------------------------------------------------------------|
-| `user`      | `UserID`    | *set at creation* | true      | uid of user who sent the message                                             |
 | `text`      | `string`    | *set at creation* | true      | contents of the message                                                      |
 | `read`      | `boolean`   | `false`           | false     | can only be changed from `false` to `true` by other user in the conversation |
+| `sender`      | `UserID`    | *set at creation* | true      | uid of user who sent the message                                             |
+| `researcherID`      | `UserID`    | *set at creation* | true      | uid of researcher who is part of conversation                                            |
+| `participantID`      | `UserID`    | *set at creation* | true      | uid of participant who is part of conversation                                             |
 | `createdAt` | `Timestamp` | *set at creation* | true      | time at which message was sent                                               |
 | `updatedAt` | `Timestamp` | *set on update*   | false     | time at which message was read                                               |
 
