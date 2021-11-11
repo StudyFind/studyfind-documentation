@@ -368,9 +368,11 @@ type StudyParticipantResponse = "Yes" | "No" | "Unsure"
 // DOCUMENT PATH: /studies/{studyID}/participants/{participantID}/messages/{messageID}
 
 {
-  user: UserID,
   text: string,
   read: boolean,
+  sender: UserID,
+  researcherID: UserID,
+  participantID: UserID,
   createdAt: Timestamp,
   updatedAt: Timestamp,
 }
