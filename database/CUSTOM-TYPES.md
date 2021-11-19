@@ -68,7 +68,7 @@
 * number (integer)
 * value is between 0 and 604800000
 
-`UserType`
+`Side`
 
 * string
 * Possible Values: `["RESEARCHER", "PARTICIPANT"]`
