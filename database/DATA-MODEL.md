@@ -12,8 +12,9 @@
 * [Message Document](#message-document)
 * [Meeting Document](#meeting-document)
 * [Reminder Document](#reminder-document)
-* [Feedback Document](#feedback-document)
 * [Mailing Document](#mailing-document)
+* [Feature Document](#feature-document)
+* [Bug Document](#bug-document)
 
 ## Researcher Document
 
@@ -480,7 +481,34 @@ type StudyParticipantResponse = "Yes" | "No" | "Unsure"
 
 ---
 
-## Feedback Document
+## Mailing Document
+
+```ts
+// DOCUMENT PATH: /mailing/{mailingID}
+
+{
+  side: Side,
+  email: Email,
+  createdAt: Timestamp,
+  updatedAt: Timestamp,
+}
+```
+
+| Name        | Type        | Default           | Immutable | Notes                                                                               |
+|-------------|-------------|-------------------|-----------|-------------------------------------------------------------------------------------|
+| `side`      | `Side`  | *set at creation* | false     | which website side (researcher/participant) did the user join the mailing list from |
+| `email`     | `Email`     | *set at creation* | false     | -                                                                                   |
+| `createdAt` | `Timestamp` | *set at creation* | true      | time at which email was submitted                                                   |
+| `updatedAt` | `Timestamp` | *set on creation* | true      | redundant for now as feedback is never updated                                      |
+
+
+**Notes:**
+
+* Only create option allowed as this data is used internally
+
+---
+
+## Feature Document
 
 * Only create mutation allowed as this data is used internally
 
@@ -494,28 +522,24 @@ type FeedbackBroswer = "Firefox" | "Opera" | "Internet Edge" | "Chrome" | "Safar
 ```
 
 ```ts
-// DOCUMENT PATH: /feedback/{feedbackID}
+// DOCUMENT PATH: /features/{featureID}
 
 {
-  title: string,
-  body: string,
-  side: UserType,
-  email: Email,
-  system: FeedbackSystem;
-  browser: FeedbackBroswer;
-  createdAt: Timestamp,
-  updatedAt: Timestamp,
+  side: Side;
+  name: string;
+  email: Email;
+  description: string;
+  createdAt: Timestamp;
+  updatedAt: Timestamp;
 }
 ```
 
 | Name        | Type              | Default           | Immutable | Notes                                                                  |
 |-------------|-------------------|-------------------|-----------|------------------------------------------------------------------------|
-| `title`     | `string`          | *set at creation* | true      | between 1 and 100 characters                                           |
-| `body`      | `string`          | *set at creation* | true      | between 1 and 500 characters                                           |
-| `side`      | `UserType`        | *set at creation* | true      | which website side (researcher/participant) was the feedback sent from |
+| `side`      | `Side`        | *set at creation* | true      | which website side (researcher/participant) was the feedback sent from |
+| `name`     | `string`          | *set at creation* | true      | between 1 and 100 characters                                           |
+| `description`      | `string`          | *set at creation* | true      | between 1 and 500 characters                                           |
 | `email`     | `Email`           | *set at creation* | true      | must be the same as the authenticated user's email                     |
-| `system`    | `FeedbackSystem`  | *set at creation* | true      | system used by the user                                                |
-| `browser`   | `FeedbackBroswer` | *set at creation* | true      | browser used by the user                                               |
 | `createdAt` | `Timestamp`       | *set at creation* | true      | time at which feedback was submitted                                   |
 | `updatedAt` | `Timestamp`       | *set on creation* | true      | redundant for now as feedback is never updated                         |
 
@@ -526,27 +550,44 @@ type FeedbackBroswer = "Firefox" | "Opera" | "Internet Edge" | "Chrome" | "Safar
 
 ---
 
-## Mailing Document
+## Bug Document
+
+* Only create mutation allowed as this data is used internally
 
 ```ts
-// DOCUMENT PATH: /mailing/{mailingID}
+// CUSTOM TYPES
+
+type BugSystem = "Android" | "iOS" | "macOS" | "Windows" | "Linux" | "Other";
+
+type BugBrowser = "Firefox" | "Opera" | "Internet Edge" | "Chrome" | "Safari" | "Other";
+
+```
+
+```ts
+// DOCUMENT PATH: /bugs/{bugID}
 
 {
-  side: UserType,
-  email: Email,
-  createdAt: Timestamp,
-  updatedAt: Timestamp,
+  side: Side;
+  email: Email;
+  system: BugSystem;
+  browser: BugBrowser;
+  description: string;
+  createdAt: Timestamp;
+  updatedAt: Timestamp;
 }
 ```
 
-| Name        | Type        | Default           | Immutable | Notes                                                                               |
-|-------------|-------------|-------------------|-----------|-------------------------------------------------------------------------------------|
-| `side`      | `UserType`  | *set at creation* | false     | which website side (researcher/participant) did the user join the mailing list from |
-| `email`     | `Email`     | *set at creation* | false     | -                                                                                   |
-| `createdAt` | `Timestamp` | *set at creation* | true      | time at which email was submitted                                                   |
-| `updatedAt` | `Timestamp` | *set on creation* | true      | redundant for now as feedback is never updated                                      |
+| Name        | Type              | Default           | Immutable | Notes                                                                  |
+|-------------|-------------------|-------------------|-----------|------------------------------------------------------------------------|
+| `side`     | `Side`          | *set at creation* | true      | which website side (researcher/participant) was the feedback reported                                           |
+| `email`      | `Email`          | *set at creation* | true      | must be the same as the authenticated user's email                                            |
+| `system`      | `BugSystem`        | *set at creation* | true      | system used by the user |
+| `browser`     | `BugBrowser`           | *set at creation* | true      | browser used by the user                     |
+| `description`    | `string`  | *set at creation* | true      |    between 1 and 500 characters                                            |
+| `createdAt` | `Timestamp`       | *set at creation* | true      | time at which bug was reported                                   |
+| `updatedAt` | `Timestamp`       | *set on creation* | true      | redundant for now as feedback is never updated                         |
 
 
 **Notes:**
 
-* Only create option allowed as this data is used internally
+* Only create mutation allowed as this data is used internally
