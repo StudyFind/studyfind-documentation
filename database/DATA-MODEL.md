@@ -513,22 +513,13 @@ type StudyParticipantResponse = "Yes" | "No" | "Unsure"
 * Only create mutation allowed as this data is used internally
 
 ```ts
-// CUSTOM TYPES
-
-type FeedbackSystem = "Android" | "iOS" | "macOS" | "Windows" | "Linux" | "Other";
-
-type FeedbackBroswer = "Firefox" | "Opera" | "Internet Edge" | "Chrome" | "Safari" | "Other";
-
-```
-
-```ts
 // DOCUMENT PATH: /features/{featureID}
 
 {
   side: Side;
   name: string;
-  email: Email;
   description: string;
+  email: Email;
   createdAt: Timestamp;
   updatedAt: Timestamp;
 }
