@@ -9,7 +9,7 @@
 
 * [Frontend](learning/FRONTEND.md)
 * [Backend](learning/BACKEND.md)
-* Ux/Ui[Coming Soon]
+* Ux/Ui [Coming Soon]
 
 ## DevOps
 
