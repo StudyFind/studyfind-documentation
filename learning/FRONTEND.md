@@ -61,8 +61,10 @@
 
 ## Typescript (1.75 hours)
 
-#### [React with TypeScript Crash Course](https://youtu.be/jrKcJxF0lAU) (1 hour)
-#### [TypeScript Course In ReactJS - TypeScript](https://youtu.be/1jMJDbq7ZX4) (0.75 hours)
+#### Courses (4 hours)
+
+* [React with TypeScript Crash Course](https://youtu.be/jrKcJxF0lAU) (1 hour)
+* [TypeScript Course In ReactJS - TypeScript](https://youtu.be/1jMJDbq7ZX4) (0.75 hours)
 
 #### Projects
 * Convert the previous Slack Clone project to a Typescript project
