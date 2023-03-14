@@ -69,6 +69,10 @@
 #### Projects
 * Convert the previous Slack Clone project to a Typescript project
 
+## NextJS
+
+* [NextJS Course for Beginners](https://youtu.be/tsmaQdgidKg) (1 hour)
+
 ## Git and Github (1 hour)
 
 * [Git Tutorial](https://www.youtube.com/watch?v=USjZcfj8yxE) (0.25 hours)
