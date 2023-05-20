@@ -1,4 +1,4 @@
-# Frontend Development Learning Path
+# Frontend Development Learning Path [Full Stack]
 
 ## HTML and CSS (10 hours)
 
@@ -14,7 +14,7 @@
 * [Youtube Clone](https://www.youtube.com/watch?v=rhPSo4_Tgi0) (0.5 hours)
 * Personal Website (INDEPENDENT) (1.5 hours)
 
-## Javascript (9.75 hours)
+## Javascript (10 hours)
 
 #### Courses (5.75 hours)
 
