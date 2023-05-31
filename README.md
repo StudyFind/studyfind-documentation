@@ -7,7 +7,7 @@
 
 ## Learning Material
 
-* [Frontend](learning/FRONTEND.md)
+* [Frontend-Full Stack](learning/FRONTEND.md)
 * [Backend](learning/BACKEND.md)
 * Ux/Ui (Coming Soon)
 
