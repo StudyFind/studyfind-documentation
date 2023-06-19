@@ -57,7 +57,7 @@
 
 * [Chat App](https://www.youtube.com/watch?v=zQyrwxMPm88) (0.25 hours)
 * [Slack Clone](https://www.youtube.com/watch?v=QiTq5WrWoJw) (3.5 hours)
-* Note: For the Slack Clone project, the syntax in the video is outdated with the newest Firebase Cloud Firestore version. To complete this project, either use the newest Firestore syntax (Refer to the documentation: https://firebase.google.com/docs/firestore), or install version 8 of Firestore `npm i firebase@8.2.3`
+    * Note: For the Slack Clone project, the syntax in the video is outdated with the newest Firebase Cloud Firestore version. To complete this project, either use the newest Firestore syntax (Refer to the documentation: https://firebase.google.com/docs/firestore), or install version 8 of         Firestore `npm i firebase@8.2.3`
 
 ## Typescript (1.75 hours)
 
