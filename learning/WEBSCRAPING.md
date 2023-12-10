@@ -1,4 +1,4 @@
-# Web Scraping Project README
+# Sample Web Scraping Project
 
 ## Objective
 
