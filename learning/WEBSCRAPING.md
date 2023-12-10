@@ -1,18 +1,3 @@
-Objective:
-Create a web scraping project to extract information about organizations from ProPublica.
-
-Tools and Libraries:
-Python
-BeautifulSoup/Selenium
-
-Given:
-You are given a file of 10,000 entries detailing nonprofit ID, the name of the nonprofit, and its location. This is an example:
-
-000004101|South Lafourche Quarterback Club|Lockport|LA|United States|PF
-
-Identify Target Data:
-Explore the website and identify the specific information you want to extract from each organization's page. This could include the organization's name, EIN (Employer Identification Number), classification, and tax code designation.
-
 # Sample Web Scraping Project
 
 ## Objective
