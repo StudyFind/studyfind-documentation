@@ -18,17 +18,7 @@ def get_info(soup):
     """
     # Your implementation here
 
-def get_financials(revenues_container):
-    """
-    Extracts financial information from the revenues container.
-
-    Args:
-        revenues_container (BeautifulSoup): Revenues container object.
-
-    Returns:
-        list: List containing financial information.
-    """
-    # Your implementation here
+    # Feel free to create new functions
 
 def process_txt_file(file_path):
     """

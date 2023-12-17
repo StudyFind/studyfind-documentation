@@ -11,11 +11,15 @@ Create a web scraping project to extract information about organizations from Pr
 
 ## Given
 
-You are provided with a file containing 10,000 entries detailing nonprofit ID, the name of the nonprofit, and its location. An example entry is as follows:
+(nonprofits.txt)
+You are provided with a file containing 1,000 entries detailing nonprofit ID, the name of the nonprofit, and its location. An example entry is as follows:
 
 ```plaintext
 000004101|South Lafourche Quarterback Club|Lockport|LA|United States|PF
 ```
+
+(sample-project.py)
+You are also given template code to begin your project.
 
 ## Set Up Your Project:
 
