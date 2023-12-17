@@ -3,6 +3,7 @@
 ## Objective
 
 Create a web scraping project to extract information about organizations from ProPublica.
+Use both BeautifulSoup AND Selenium to complete this task. It will allow you to explore two methods of webscraping, both of which have different uses. 
 
 ## Tools and Libraries
 
@@ -53,6 +54,8 @@ You are also given template code to begin your project.
 # Resources
 
 - [Web Scraping Tutorial - Python | Web Scraping with BeautifulSoup and Requests](https://www.youtube.com/watch?v=bargNl2WeN4&pp=ygUNYmVhdXRpZnVsc291cA%3D%3D&ab_channel=AlexTheAnalyst)
+
+- [Python Selenium for Beginners — A Complete Web Scraping Project (Scraping Dynamic Websites)](https://www.youtube.com/watch?v=UOsRrxMKJYk&ab_channel=ThePyCoach)
 
 
 
