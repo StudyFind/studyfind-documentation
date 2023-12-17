@@ -57,5 +57,12 @@ You are also given template code to begin your project.
 
 - [Python Selenium for Beginners — A Complete Web Scraping Project (Scraping Dynamic Websites)](https://www.youtube.com/watch?v=UOsRrxMKJYk&ab_channel=ThePyCoach)
 
+# Additional
+
+Learn about these topics to further your knowledge of building data!
+
+## Pandas (4 hours):
+https://www.kaggle.com/learn/pandas
+
 
 
