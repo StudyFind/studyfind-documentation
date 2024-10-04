@@ -9,7 +9,6 @@
 
 * [Frontend-Full Stack](learning/FRONTEND.md)
 * [Backend](learning/BACKEND.md)
-* Ux/Ui (Coming Soon)
 
 ## DevOps
 
