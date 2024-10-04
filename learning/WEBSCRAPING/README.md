@@ -2,7 +2,7 @@
 
 ## Objective
 
-Create a web scraping project to extract information about organizations from ProPublica.
+Create a web scraping project to extract information about organizations
 Use both BeautifulSoup AND Selenium to complete this task. It will allow you to explore two methods of webscraping, both of which have different uses. 
 
 ## Tools and Libraries
@@ -12,14 +12,6 @@ Use both BeautifulSoup AND Selenium to complete this task. It will allow you to 
 
 ## Given
 
-(nonprofits.txt)
-You are provided with a file containing 1,000 entries detailing nonprofit ID, the name of the nonprofit, and its location. An example entry is as follows:
-
-```plaintext
-000004101|South Lafourche Quarterback Club|Lockport|LA|United States|PF
-```
-
-(sample-project.py)
 You are also given template code to begin your project.
 
 ## Set Up Your Project:
